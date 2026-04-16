@@ -25,6 +25,7 @@ public class ModItems {
 
 		ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
 			itemGroup.accept(ModItems.SLICED_APPLE);
+			itemGroup.accept(ModItems.KNIFE);
 		});
 	}
 
@@ -43,6 +44,11 @@ public class ModItems {
 			// Ignore the food component for now, we'll cover it later in the food section.
 			new Item(new FabricItemSettings()),
 			"sliced_apple"
+	);
+
+	public static final Item KNIFE = register(
+			new Item(new Item.Properties().stacksTo(1)),
+			"knife"
 	);
 }
 
