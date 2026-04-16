@@ -9,7 +9,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
@@ -25,6 +24,7 @@ public class ModItems {
 
 		ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
 			itemGroup.accept(ModItems.SLICED_APPLE);
+			itemGroup.accept(ModItems.KNIFE);
 		});
 	}
 
@@ -32,17 +32,18 @@ public class ModItems {
 		// Create the identifier for the item.
 		ResourceLocation itemID = new ResourceLocation(Apples.MOD_ID, id);
 
-		// Register the item.
-		Item registeredItem = Registry.register(BuiltInRegistries.ITEM, itemID, item);
-
-		// Return the registered item!
-		return registeredItem;
+		return Registry.register(BuiltInRegistries.ITEM, itemID, item);
 	}
 
 	public static final Item SLICED_APPLE = register(
 			// Ignore the food component for now, we'll cover it later in the food section.
 			new Item(new FabricItemSettings()),
 			"sliced_apple"
+	);
+
+	public static final Item KNIFE = register(
+			new Item(new Item.Properties().stacksTo(1)),
+			"knife"
 	);
 }
 
