@@ -11,8 +11,8 @@ import net.minecraft.world.item.Item;
 public class ModItems {
 	public static void initialize(){
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS)
-				.register((itemGroup) -> itemGroup.accept(ModItems.TEST_ITEM));
-	};
+				.register((itemGroup) -> itemGroup.accept(ModItems.SLICED_APPLE));
+	}
 
 	public static Item register(Item item, String id) {
 		// Create the identifier for the item.
@@ -25,10 +25,10 @@ public class ModItems {
 		return registeredItem;
 	}
 
-	public static final Item TEST_ITEM = register(
+	public static final Item SLICED_APPLE = register(
 			// Ignore the food component for now, we'll cover it later in the food section.
 			new Item(new FabricItemSettings()),
-			"test_item"
+			"sliced_apple"
 	);
 }
 
