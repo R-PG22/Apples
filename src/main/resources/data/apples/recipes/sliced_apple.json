@@ -6,7 +6,7 @@
     { "item": "apples:knife" }
   ],
   "result": {
-    "item": "apples:test_item",
+    "item": "apples:sliced_apple",
     "count": 4
   }
 }

@@ -8,6 +8,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -35,9 +36,15 @@ public class ModItems {
 		return Registry.register(BuiltInRegistries.ITEM, itemID, item);
 	}
 
+	public static final FoodProperties SLICED_APPLE_COMPONENT = new FoodProperties.Builder()
+			.nutrition(1)
+			.saturationMod(0.6f)
+			.fast()
+			.build();
+
 	public static final Item SLICED_APPLE = register(
 			// Ignore the food component for now, we'll cover it later in the food section.
-			new Item(new FabricItemSettings()),
+			new Item(new FabricItemSettings().food(SLICED_APPLE_COMPONENT)),
 			"sliced_apple"
 	);
 
