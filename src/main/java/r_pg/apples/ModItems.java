@@ -12,6 +12,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import r_pg.apples.item_settings.KnifeItem;
 
 public class ModItems {
 	public static final ResourceKey<CreativeModeTab> CUSTOM_ITEM_GROUP_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), new ResourceLocation(Apples.MOD_ID, "item_group"));
@@ -49,7 +50,7 @@ public class ModItems {
 	);
 
 	public static final Item KNIFE = register(
-			new Item(new Item.Properties().stacksTo(1)),
+			new KnifeItem(),
 			"knife"
 	);
 }
