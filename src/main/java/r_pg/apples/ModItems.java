@@ -8,6 +8,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -26,6 +28,7 @@ public class ModItems {
 		ItemGroupEvents.modifyEntriesEvent(CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
 			itemGroup.accept(ModItems.SLICED_APPLE);
 			itemGroup.accept(ModItems.KNIFE);
+			itemGroup.accept(ModItems.IRON_APPLE);
 		});
 	}
 
@@ -42,6 +45,12 @@ public class ModItems {
 			.fast()
 			.build();
 
+	public static final FoodProperties IRON_APPLE_COMPONENT = new FoodProperties.Builder()
+			.nutrition(4)
+			.saturationMod(2.4f)
+			.effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 180 * 20, 1), 1.0f)
+			.build();
+
 	public static final Item SLICED_APPLE = register(
 			// Ignore the food component for now, we'll cover it later in the food section.
 			new Item(new FabricItemSettings().food(SLICED_APPLE_COMPONENT)),
@@ -51,6 +60,12 @@ public class ModItems {
 	public static final Item KNIFE = register(
 			new Item(new Item.Properties().stacksTo(1)),
 			"knife"
+	);
+
+	public static final Item IRON_APPLE = register(
+			// Ignore the food component for now, we'll cover it later in the food section.
+			new Item(new FabricItemSettings().food(IRON_APPLE_COMPONENT)),
+			"iron_apple"
 	);
 }
 
