@@ -30,6 +30,7 @@ public class ModItems {
 			itemGroup.accept(ModItems.SLICED_APPLE);
 			itemGroup.accept(ModItems.KNIFE);
 			itemGroup.accept(ModItems.IRON_APPLE);
+			itemGroup.accept(ModItems.DIAMOND_APPLE);
 		});
 	}
 
@@ -52,6 +53,12 @@ public class ModItems {
 			.effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 180 * 20, 1), 1.0f)
 			.build();
 
+	public static final FoodProperties DIAMOND_APPLE_COMPONENT = new FoodProperties.Builder()
+			.nutrition(4)
+			.saturationMod(2.4f)
+			.effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 180 * 20, 1), 1.0f)
+			.build();
+
 	public static final Item SLICED_APPLE = register(
 			// Ignore the food component for now, we'll cover it later in the food section.
 			new Item(new FabricItemSettings().food(SLICED_APPLE_COMPONENT)),
@@ -67,6 +74,12 @@ public class ModItems {
 			// Ignore the food component for now, we'll cover it later in the food section.
 			new Item(new FabricItemSettings().food(IRON_APPLE_COMPONENT)),
 			"iron_apple"
+	);
+
+	public static final Item DIAMOND_APPLE = register(
+			// Ignore the food component for now, we'll cover it later in the food section.
+			new Item(new FabricItemSettings().food(DIAMOND_APPLE_COMPONENT)),
+			"diamond_apple"
 	);
 }
 
