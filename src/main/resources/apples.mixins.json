@@ -3,7 +3,9 @@
 	"package": "r_pg.apples.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+        "PlayerXpBoostMixin",
+        "PlayerMagnetMixin",
+        "BlockAutoSmeltMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -3,5 +3,8 @@
   "item.apples.sliced_apple": "カットされたリンゴ",
   "item.apples.knife": "ナイフ",
   "item.apples.iron_apple": "鉄のリンゴ",
-  "item.apples.diamond_apple": "ダイヤモンドのリンゴ"
+  "item.apples.diamond_apple": "ダイヤモンドのリンゴ",
+  "effect.apples.focus": "集中",
+  "effect.apples.attraction": "引力",
+  "effect.apples.autosmelt": "自動精錬"
 }

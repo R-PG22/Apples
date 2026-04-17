@@ -3,5 +3,8 @@
   "item.apples.sliced_apple": "Sliced Apple",
   "item.apples.knife": "Knife",
   "item.apples.iron_apple": "Iron Apple",
-  "item.apples.diamond_apple": "Diamond Apple"
+  "item.apples.diamond_apple": "Diamond Apple",
+  "effect.apples.focus": "Focus",
+  "effect.apples.attraction": "Attraction",
+  "effect.apples.autosmelt": "Auto-Smelt"
 }
